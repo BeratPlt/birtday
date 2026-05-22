@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İyi Ki Doğdun Sevgilim</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Caveat:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ust-bolum: rgba(74, 44, 36, 0.7); 
+            --vurgu-renk: #FFB385; 
+            --acik-yazi: #FDF3E7;  
+            --kutu-arkaplan: #FFFDF9; 
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #4A2C24, #7B3A2A, #C7512C);
+            background-attachment: fixed; 
+            min-height: 100vh;
+            color: var(--acik-yazi);
+            text-align: center;
+            overflow-x: hidden; 
+        }
+
+        /* --- ÜST BÖLÜM (HERO) --- */
+        .hero {
+            background-color: var(--ust-bolum);
+            padding: 100px 20px;
+            border-bottom: 5px solid var(--vurgu-renk); 
+            position: relative; 
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); 
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive; 
+            font-size: 4.5rem;
+            color: var(--vurgu-renk);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4); 
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--acik-yazi);
+            margin-top: 15px;
+            font-weight: 300;
+        }
+
+        /* Müzik Çalar */
+        .music-player {
+            margin-top: 30px;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 15px;
+            border-radius: 50px;
+            display: inline-block;
+            border: 1px solid rgba(255, 179, 133, 0.2);
+        }
+
+        /* --- GALERİ (POLAROID) --- */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .polaroid-frame {
+            background: var(--kutu-arkaplan);
+            padding: 15px 15px 40px 15px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+            border: 2px solid rgba(0,0,0,0.1);
+        }
+
+        .polaroid-frame:nth-child(even) { transform: rotate(3deg); }
+        .polaroid-frame:nth-child(odd) { transform: rotate(-3deg); }
+
+        .polaroid-frame:hover {
+            transform: scale(1.1) rotate(0deg) !important; 
+            z-index: 10;
+        }
+
+        .gallery img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+
+        /* --- MESAJ KUTUSU (FONT GÜNCELLENDİ) --- */
+        .message-box {
+            max-width: 750px;
+            margin: 0 auto 80px;
+            padding: 50px;
+            background: var(--kutu-arkaplan); 
+            color: #333; 
+            border-radius: 20px; 
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); 
+            border: 3px solid var(--vurgu-renk); 
+            position: relative;
+            text-align: left;
+        }
+
+        .message-box h2 {
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            color: #000000; 
+            font-size: 3rem;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        .message-box p {
+            /* YENİ TATLI FONTUMUZ */
+            font-family: 'Caveat', cursive;
+            font-size: 1.7rem; /* El yazısı olduğu için boyutu biraz artırdık */
+            line-height: 1.4;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        /* --- ALT BÖLÜM --- */
+        .footer {
+            padding: 40px;
+            background-color: var(--ust-bolum);
+            color: var(--vurgu-renk); 
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            border-top: 5px solid var(--vurgu-renk);
+        }
+
+        /* --- SÜZÜLEN EMOJİLER --- */
+        @keyframes floatArea {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .pet-emoji {
+            font-size: 25px;
+            position: absolute;
+            bottom: -30px;
+            animation: floatArea linear infinite;
+            opacity: 0.9;
+        }
+
+        .pet-emoji:nth-child(1) { left: 10%; animation-duration: 7s; font-size: 35px; }
+        .pet-emoji:nth-child(2) { left: 25%; animation-duration: 9s; font-size: 25px; animation-delay: 2s; }
+        .pet-emoji:nth-child(3) { left: 50%; animation-duration: 6s; font-size: 40px; animation-delay: 1s; }
+        .pet-emoji:nth-child(4) { left: 75%; animation-duration: 8s; font-size: 30px; animation-delay: 3s; }
+        .pet-emoji:nth-child(5) { left: 90%; animation-duration: 10s; font-size: 28px; animation-delay: 1s; }
+
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="pet-emoji">🐩</div>
+        <div class="pet-emoji">🐱</div>
+        <div class="pet-emoji">🐾</div>
+        <div class="pet-emoji">🐈</div>
+        <div class="pet-emoji">🐩</div>
+        
+        <h1>İyi Ki Doğdun Sevgilim!</h1>
+        <p>Birlikte nice mutlu zamanlara</p>
+        
+        <div class="music-player">
+            <p style="font-size: 1rem; color: var(--vurgu-renk); font-weight: bold; margin-bottom: 8px; margin-top: 0;">
+                🎵 
+            </p>
+            <audio controls loop style="height: 35px; border-radius: 20px;">
+                <source src="sarki.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <div class="polaroid-frame">
+            <img src="foto2.jpeg" alt="Bizim Fotoğrafımız 1">
+            <p style="margin-top: 15px; font-weight: 600; color: #555; text-align: center; font-family: 'Caveat'; font-size: 1.4rem;">Kücük biz</p>
+        </div>
+        
+        <div class="polaroid-frame">
+            <img src="foto1.jpeg" alt="Bizim Fotoğrafımız 2">
+            <p style="margin-top: 15px; font-weight: 600; color: #555; text-align: center; font-family: 'Caveat'; font-size: 1.4rem;">Küçük Mina sana hayran</p>
+        </div>
+        
+        <div class="polaroid-frame">
+            <img src="foto3.jpeg" alt="Bizim Fotoğrafımız 3">
+            <p style="margin-top: 15px; font-weight: 600; color: #555; text-align: center; font-family: 'Caveat'; font-size: 1.4rem;">Seni seviyorum!</p>
+        </div>
+    </div>
+
+    <div class="message-box">
+        <h2>Gördüğüm en güzel şey senin gülümsemen</h2>
+        <p>Umarım hayatımın geri kalanında her sabah uyandığımda bu gülümsemeyi görebilirim.</p>
+        <p>Her şeyin istediğin gibi olduğu, sağlıklı başarılı ve mutlu nice yaşlara...</p>
+        <p>İyi ki varsın. Seni çok seviyorum!</p>
+    </div>
+
+    <div class="footer">
+        Sonsuza dek birlikte...
+    </div>
+
+</body>
+</html>
